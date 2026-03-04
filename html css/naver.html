@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>네이버 실전 뼈대 만들기 (JS 추가)</title>
+    <style>
+        body { background-color: #f4f6f8; margin: 0; font-family: sans-serif; color: #333; }
+        #wrap { width: 1280px; margin: 0 auto; padding-top: 20px; }
+        .box { background-color: #fff; border: 1px solid #e3e5e8; border-radius: 8px; margin-bottom: 15px; overflow: hidden; }
+        
+        header { display: flex; justify-content: center; align-items: center; padding: 20px 0; position: relative; }
+        .logo-area { width: 220px; height: 90px; background-color: #ffd700; border-radius: 10px; display: flex; justify-content: center; align-items: center; font-weight: bold; position: absolute; left: 0;}
+        .search-area { width: 700px; height: 60px; border: 2px solid #03c75a; border-radius: 30px; display: flex; align-items: center; padding: 0 20px; font-size: 18px; color: #999; }
+        
+        nav { display: flex; justify-content: center; gap: 30px; padding: 15px 0 30px 0; font-size: 14px; font-weight: bold; }
+        .nav-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .nav-icon { width: 44px; height: 44px; background-color: #fff; border-radius: 50%; border: 1px solid #e3e5e8; }
+
+        .container { display: grid; grid-template-columns: 870px 380px; gap: 30px; }
+
+        .top-banner { height: 130px; background-color: #f2f2f2; display: flex; align-items: center; padding: 0 30px; font-size: 24px; font-weight: bold; }
+        .news-stand { padding: 20px; }
+        .section-header { display: flex; gap: 15px; font-weight: bold; margin-bottom: 15px; color: #555;}
+        
+        .news-grid { display: grid; grid-template-columns: repeat(6, 1fr); grid-template-rows: repeat(4, 50px); border-top: 1px solid #e3e5e8; border-left: 1px solid #e3e5e8; }
+        .news-item { border-right: 1px solid #e3e5e8; border-bottom: 1px solid #e3e5e8; display: flex; justify-content: center; align-items: center; font-size: 12px; color: #666; }
+
+        .shopping { padding: 20px; height: 200px; }
+
+        .login-box { padding: 25px 20px; text-align: center; }
+        .login-msg { font-size: 14px; color: #666; margin-bottom: 15px; }
+        .login-btn { display: block; background-color: #03c75a; color: white; padding: 18px 0; border-radius: 4px; font-size: 16px; font-weight: bold; margin-bottom: 15px; text-decoration: none;}
+        .login-links { display: flex; justify-content: center; gap: 15px; font-size: 13px; color: #666; }
+
+        .right-banner-1 { height: 180px; padding: 20px; }
+        .right-banner-2 { height: 100px; background-color: #0c1540; color: white; padding: 20px;}
+        .right-widget { padding: 20px; height: 150px; }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div class="logo-area">정월대보름 로고</div>
+            <div class="search-area">검색어를 입력해 주세요.</div>
+        </header>
+
+        <nav>
+            <div class="nav-item"><div class="nav-icon"></div>메일</div>
+            <div class="nav-item"><div class="nav-icon"></div>카페</div>
+            <div class="nav-item"><div class="nav-icon"></div>블로그</div>
+            <div class="nav-item"><div class="nav-icon"></div>스토어</div>
+            <div class="nav-item"><div class="nav-icon"></div>뉴스</div>
+            <div class="nav-item"><div class="nav-icon"></div>증권</div>
+            <div class="nav-item"><div class="nav-icon"></div>부동산</div>
+            <div class="nav-item"><div class="nav-icon"></div>지도</div>
+        </nav>
+
+        <div class="container">
+            <main>
+                <div class="box top-banner">영어, 진짜 못하는 분 찾습니다.</div>
+
+                <div class="box news-stand">
+                    <div class="section-header">뉴스스탠드 · 언론사편집 · 엔터 · 스포츠 · 경제</div>
+                    <div class="news-grid">
+                        <div class="news-item">헤럴드경제</div><div class="news-item">디지털타임스</div><div class="news-item">서울신문</div><div class="news-item">프레시안</div><div class="news-item">중앙일보</div><div class="news-item">뉴데일리</div>
+                        <div class="news-item">이데일리</div><div class="news-item">세계일보</div><div class="news-item">파이낸셜뉴스</div><div class="news-item">ZDNET</div><div class="news-item">MBN</div><div class="news-item">아시아경제</div>
+                        <div class="news-item">MBC</div><div class="news-item">KBS</div><div class="news-item">아이뉴스24</div><div class="news-item">기호일보</div><div class="news-item">경인일보</div><div class="news-item">중부일보</div>
+                        <div class="news-item">철강금속신문</div><div class="news-item">이로운넷</div><div class="news-item">kbc</div><div class="news-item">TOPDaily</div><div class="news-item">게임동아</div><div class="news-item">Byline Network</div>
+                    </div>
+                </div>
+
+                <div class="box shopping">
+                    <div class="section-header">쇼핑 · 맨즈 · 브랜드샵 · 추천핫딜</div>
+                    <div style="background-color:#f9f9f9; height:120px; border-radius: 4px;">(쇼핑 상품 이미지들 자리)</div>
+                </div>
+            </main>
+
+            <aside>
+                <div class="box login-box">
+                    <div class="login-msg">네이버를 더 안전하고 편리하게 이용하세요</div>
+                    
+                    <a href="#" class="login-btn" onclick="alert('환영합니다! 자바스크립트 마법이 성공했습니다! 🧙‍♂️');">NAVER 로그인</a>
+                    
+                    <div class="login-links">
+                        <span>아이디 찾기</span> | <span>비밀번호 찾기</span> | <span>회원가입</span>
+                    </div>
+                </div>
+
+                <div class="box right-banner-1">
+                    <strong>당신의 생각으로 빛나는 대한민국</strong><br><br>
+                    <div style="background-color:#ffe4e1; height: 100px; border-radius: 4px;">(모두의 아이디어 포스터 자리)</div>
+                </div>
+
+                <div class="box right-banner-2">
+                    <span style="font-size: 12px; color: #aaa;">나의 첫 번째 쇼핑지능</span><br>
+                    <strong>네이버 쇼핑에이전트</strong>
+                </div>
+
+                <div class="box right-widget">
+                    <strong>요즘 관심 받는 아이템</strong><br><br>
+                    <div style="display: flex; gap: 10px;">
+                        <div style="flex: 1; height: 80px; background-color: #f1f1f1; border-radius: 4px;"></div>
+                        <div style="flex: 1; height: 80px; background-color: #f1f1f1; border-radius: 4px;"></div>
+                        <div style="flex: 1; height: 80px; background-color: #f1f1f1; border-radius: 4px;"></div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
