@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>트립홈 - 여행과 맛집</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── 헤더 ── -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">🗺 트립홈</div>
+      <nav class="gnb">
+        <a href="#">여행</a>
+        <a href="#">맛집</a>
+        <a href="#">커뮤니티</a>
+        <a href="#">이벤트</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn-outline" onclick="goLogin()">로그인</button>
+        <button class="btn-primary" onclick="goLogin()">회원가입</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── 히어로 배너 ── -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-sub">지금 이 순간, 여행을 시작하세요</p>
+      <h1 class="hero-title">당신만의 특별한<br>여행 코스를 찾아보세요</h1>
+      <div class="hero-search">
+        <input type="text" placeholder="여행지, 맛집, 코스를 검색해보세요" />
+        <button onclick="goLogin()">검색</button>
+      </div>
+      <div class="hero-tags">
+        <span onclick="goLogin()">#제주</span>
+        <span onclick="goLogin()">#부산</span>
+        <span onclick="goLogin()">#경주</span>
+        <span onclick="goLogin()">#전주</span>
+        <span onclick="goLogin()">#강릉</span>
+      </div>
+    </div>
+    <div class="hero-visual">🌅</div>
+  </section>
+
+  <!-- ── 카테고리 ── -->
+  <section class="category-section">
+    <div class="inner">
+      <div class="cat-grid">
+        <div class="cat-item" onclick="goLogin()"><span class="cat-emoji">🏔</span><span>자연·등산</span></div>
+        <div class="cat-item" onclick="goLogin()"><span class="cat-emoji">🏙</span><span>도시·쇼핑</span></div>
+        <div class="cat-item" onclick="goLogin()"><span class="cat-emoji">🍜</span><span>맛집·카페</span></div>
+        <div class="cat-item" onclick="goLogin()"><span class="cat-emoji">🏯</span><span>역사·문화</span></div>
+        <div class="cat-item" onclick="goLogin()"><span class="cat-emoji">🏖</span><span>해변·섬</span></div>
+        <div class="cat-item" onclick="goLogin()"><span class="cat-emoji">⛺</span><span>캠핑·펜션</span></div>
+        <div class="cat-item" onclick="goLogin()"><span class="cat-emoji">🎡</span><span>테마파크</span></div>
+        <div class="cat-item" onclick="goLogin()"><span class="cat-emoji">💆</span><span>힐링·스파</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 테마별 코스 탐색 영역 ── -->
+  <section class="section-block">
+    <div class="inner">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">테마별 코스 탐색</h2>
+          <p class="section-desc">취향에 맞는 여행 코스를 골라보세요</p>
+        </div>
+        <a href="#" class="see-all" onclick="goLogin(); return false;">전체보기 →</a>
+      </div>
+      <div class="carousel-wrap" id="course-wrap">
+        <button class="carousel-btn prev" onclick="slide('course', -1)">&#8249;</button>
+        <div class="carousel-viewport">
+          <div class="carousel-track" id="course-track">
+            <div class="course-card" onclick="goLogin()">
+              <div class="course-img" style="background:linear-gradient(135deg,#fde8d8,#f9c5a0)">🌸</div>
+              <div class="course-body">
+                <span class="course-tag">봄 추천</span>
+                <p class="course-name">봄 꽃길 힐링 코스</p>
+                <p class="course-info">서울 · 2박 3일 · ★ 4.9</p>
+              </div>
+            </div>
+            <div class="course-card" onclick="goLogin()">
+              <div class="course-img" style="background:linear-gradient(135deg,#d8eafd,#a0c5f9)">🌊</div>
+              <div class="course-body">
+                <span class="course-tag">인기</span>
+                <p class="course-name">바다 힐링 코스</p>
+                <p class="course-info">부산 · 1박 2일 · ★ 4.8</p>
+              </div>
+            </div>
+            <div class="course-card" onclick="goLogin()">
+              <div class="course-img" style="background:linear-gradient(135deg,#d8fde8,#a0f9c5)">🏞</div>
+              <div class="course-body">
+                <span class="course-tag">자연</span>
+                <p class="course-name">자연 트레킹 코스</p>
+                <p class="course-info">강원도 · 2박 3일 · ★ 4.7</p>
+              </div>
+            </div>
+            <div class="course-card" onclick="goLogin()">
+              <div class="course-img" style="background:linear-gradient(135deg,#fdf8d8,#f9eda0)">🏯</div>
+              <div class="course-body">
+                <span class="course-tag">역사</span>
+                <p class="course-name">역사 문화 탐방 코스</p>
+                <p class="course-info">경주 · 1박 2일 · ★ 4.8</p>
+              </div>
+            </div>
+            <div class="course-card" onclick="goLogin()">
+              <div class="course-img" style="background:linear-gradient(135deg,#f0d8fd,#d5a0f9)">🎨</div>
+              <div class="course-body">
+                <span class="course-tag">감성</span>
+                <p class="course-name">예술 감성 여행 코스</p>
+                <p class="course-info">전주 · 당일치기 · ★ 4.6</p>
+              </div>
+            </div>
+            <div class="course-card" onclick="goLogin()">
+              <div class="course-img" style="background:linear-gradient(135deg,#fdd8d8,#f9a0a0)">⛺</div>
+              <div class="course-body">
+                <span class="course-tag">캠핑</span>
+                <p class="course-name">숲속 캠핑 힐링 코스</p>
+                <p class="course-info">가평 · 1박 2일 · ★ 4.7</p>
+              </div>
+            </div>
+            <div class="course-card" onclick="goLogin()">
+              <div class="course-img" style="background:linear-gradient(135deg,#d8f8fd,#a0eaf9)">🐋</div>
+              <div class="course-body">
+                <span class="course-tag">제주</span>
+                <p class="course-name">제주 올레길 완주 코스</p>
+                <p class="course-info">제주 · 3박 4일 · ★ 4.9</p>
+              </div>
+            </div>
+            <div class="course-card" onclick="goLogin()">
+              <div class="course-img" style="background:linear-gradient(135deg,#fff0d8,#f9d8a0)">🌃</div>
+              <div class="course-body">
+                <span class="course-tag">야경</span>
+                <p class="course-name">야경 명소 투어 코스</p>
+                <p class="course-info">서울 · 당일치기 · ★ 4.5</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-btn next" onclick="slide('course', 1)">&#8250;</button>
+      </div>
+      <div class="carousel-dots" id="course-dots"></div>
+    </div>
+  </section>
+
+  <!-- ── 지역별 식당 영역 ── -->
+  <section class="section-block section-alt">
+    <div class="inner">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">지역별 식당</h2>
+          <p class="section-desc">그 지역 사람들이 인정한 맛집</p>
+        </div>
+        <a href="#" class="see-all" onclick="goLogin(); return false;">전체보기 →</a>
+      </div>
+
+      <!-- 지역 탭 -->
+      <div class="region-tabs">
+        <button class="r-tab active" onclick="setRegion(this,'전체')">전체</button>
+        <button class="r-tab" onclick="setRegion(this,'서울')">서울</button>
+        <button class="r-tab" onclick="setRegion(this,'부산')">부산</button>
+        <button class="r-tab" onclick="setRegion(this,'제주')">제주</button>
+        <button class="r-tab" onclick="setRegion(this,'전주')">전주</button>
+        <button class="r-tab" onclick="setRegion(this,'강릉')">강릉</button>
+      </div>
+
+      <div class="carousel-wrap" id="restaurant-wrap">
+        <button class="carousel-btn prev" onclick="slide('restaurant', -1)">&#8249;</button>
+        <div class="carousel-viewport">
+          <div class="carousel-track" id="restaurant-track">
+            <div class="rest-card" onclick="goLogin()">
+              <div class="rest-img" style="background:linear-gradient(135deg,#fff0e0,#ffd6a0)">🍖</div>
+              <div class="rest-body">
+                <div class="rest-top">
+                  <p class="rest-name">제주 흑돼지 거리</p>
+                  <span class="rest-rating">★ 4.9</span>
+                </div>
+                <p class="rest-region">제주 · 고기구이</p>
+                <p class="rest-desc">제주산 흑돼지를 직화로 즐기는 현지인 맛집</p>
+              </div>
+            </div>
+            <div class="rest-card" onclick="goLogin()">
+              <div class="rest-img" style="background:linear-gradient(135deg,#e0f4ff,#a0d8f9)">🐟</div>
+              <div class="rest-body">
+                <div class="rest-top">
+                  <p class="rest-name">부산 자갈치 횟집</p>
+                  <span class="rest-rating">★ 4.8</span>
+                </div>
+                <p class="rest-region">부산 · 해산물</p>
+                <p class="rest-desc">싱싱한 활어회와 해산물 전문점</p>
+              </div>
+            </div>
+            <div class="rest-card" onclick="goLogin()">
+              <div class="rest-img" style="background:linear-gradient(135deg,#fff4e0,#f9e0a0)">🍜</div>
+              <div class="rest-body">
+                <div class="rest-top">
+                  <p class="rest-name">전주 콩나물국밥</p>
+                  <span class="rest-rating">★ 4.7</span>
+                </div>
+                <p class="rest-region">전주 · 한식</p>
+                <p class="rest-desc">전주 한옥마을 내 전통 콩나물국밥</p>
+              </div>
+            </div>
+            <div class="rest-card" onclick="goLogin()">
+              <div class="rest-img" style="background:linear-gradient(135deg,#ffe0e0,#f9a0a0)">🥩</div>
+              <div class="rest-body">
+                <div class="rest-top">
+                  <p class="rest-name">서울 마포 갈비</p>
+                  <span class="rest-rating">★ 4.8</span>
+                </div>
+                <p class="rest-region">서울 · 한식</p>
+                <p class="rest-desc">30년 전통 마포 갈비 명가</p>
+              </div>
+            </div>
+            <div class="rest-card" onclick="goLogin()">
+              <div class="rest-img" style="background:linear-gradient(135deg,#e0ffe4,#a0f9b0)">🍣</div>
+              <div class="rest-body">
+                <div class="rest-top">
+                  <p class="rest-name">강릉 초당 순두부</p>
+                  <span class="rest-rating">★ 4.9</span>
+                </div>
+                <p class="rest-region">강릉 · 한식</p>
+                <p class="rest-desc">바닷물로 만든 원조 초당 순두부</p>
+              </div>
+            </div>
+            <div class="rest-card" onclick="goLogin()">
+              <div class="rest-img" style="background:linear-gradient(135deg,#f0e0ff,#d5a0f9)">🍲</div>
+              <div class="rest-body">
+                <div class="rest-top">
+                  <p class="rest-name">광주 상무지구 보쌈</p>
+                  <span class="rest-rating">★ 4.6</span>
+                </div>
+                <p class="rest-region">광주 · 한식</p>
+                <p class="rest-desc">광주식 보쌈과 막걸리 전문점</p>
+              </div>
+            </div>
+            <div class="rest-card" onclick="goLogin()">
+              <div class="rest-img" style="background:linear-gradient(135deg,#e8ffd8,#c0f9a0)">🌿</div>
+              <div class="rest-body">
+                <div class="rest-top">
+                  <p class="rest-name">경주 교동 쌈밥</p>
+                  <span class="rest-rating">★ 4.7</span>
+                </div>
+                <p class="rest-region">경주 · 한식</p>
+                <p class="rest-desc">신선한 채소와 함께하는 경주식 쌈밥</p>
+              </div>
+            </div>
+            <div class="rest-card" onclick="goLogin()">
+              <div class="rest-img" style="background:linear-gradient(135deg,#ffd8e8,#f9a0c8)">🦑</div>
+              <div class="rest-body">
+                <div class="rest-top">
+                  <p class="rest-name">속초 중앙시장 닭강정</p>
+                  <span class="rest-rating">★ 4.8</span>
+                </div>
+                <p class="rest-region">속초 · 분식</p>
+                <p class="rest-desc">속초 명물 닭강정과 오징어순대</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-btn next" onclick="slide('restaurant', 1)">&#8250;</button>
+      </div>
+      <div class="carousel-dots" id="restaurant-dots"></div>
+    </div>
+  </section>
+
+  <!-- ── 인기 여행지 배너 ── -->
+  <section class="section-block">
+    <div class="inner">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">인기 여행지</h2>
+          <p class="section-desc">지금 가장 많이 찾는 여행지</p>
+        </div>
+        <a href="#" class="see-all" onclick="goLogin(); return false;">전체보기 →</a>
+      </div>
+      <div class="place-grid">
+        <div class="place-card large" onclick="goLogin()">
+          <div class="place-img" style="background:linear-gradient(135deg,#a8edea,#fed6e3)">🌅</div>
+          <div class="place-overlay">
+            <p class="place-name">제주도</p>
+            <p class="place-stat">★ 4.9 · 리뷰 2,341개</p>
+          </div>
+        </div>
+        <div class="place-card" onclick="goLogin()">
+          <div class="place-img" style="background:linear-gradient(135deg,#ffecd2,#fcb69f)">🏙</div>
+          <div class="place-overlay">
+            <p class="place-name">부산</p>
+            <p class="place-stat">★ 4.8 · 리뷰 1,892개</p>
+          </div>
+        </div>
+        <div class="place-card" onclick="goLogin()">
+          <div class="place-img" style="background:linear-gradient(135deg,#d4fc79,#96e6a1)">🏯</div>
+          <div class="place-overlay">
+            <p class="place-name">경주</p>
+            <p class="place-stat">★ 4.7 · 리뷰 1,203개</p>
+          </div>
+        </div>
+        <div class="place-card" onclick="goLogin()">
+          <div class="place-img" style="background:linear-gradient(135deg,#89f7fe,#66a6ff)">🌊</div>
+          <div class="place-overlay">
+            <p class="place-name">강릉</p>
+            <p class="place-stat">★ 4.8 · 리뷰 987개</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 푸터 ── -->
+  <footer class="footer">
+    <div class="inner">
+      <div class="footer-top">
+        <div class="footer-logo">🗺 트립홈</div>
+        <div class="footer-links">
+          <a href="#">이용약관</a>
+          <a href="#">개인정보처리방침</a>
+          <a href="#">고객센터</a>
+        </div>
+      </div>
+      <p class="footer-copy">© 2025 트립홈. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
